@@ -12,7 +12,7 @@ That is why you can run many millions more goroutines and only thousands of Java
 <br>
 A second issue is JVM relies on the OS kernel to schedule OS threads. The OS keeps a list of all running tasks, as  Linux doesn't distinguish between threads and processes, and attempts to give each a fair share of CPU time. When it switches from one thread to another, the new thread running must be started with a view of the world that abstract away other threads running on the same CPU. This is expensive.
 <br>
-Go has its own scheduler that allows many Goroutines to run on the same OS thread. It saves a significant amount of time on context switching. The scheduler also optimises by only running a Goroutine that has a non-empty channel with work to do.
+Go has its own scheduler that allows many Goroutines to run on the same OS thread. It saves a significant amount of time on context switching. The scheduler also optimises by only running a Goroutine that has a non-empty channel with work to do. Only non-blocking Goroutines is assigned to the OS thread 
 
 
 ### The program
