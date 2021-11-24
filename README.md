@@ -21,5 +21,5 @@ Go has its own scheduler that allows many Goroutines to run on the same OS threa
  
 Run the program by downloading the repository and run the following commands
 ```shell
-% go mod init async && go mod tidy && go run async.go
+go mod init async && go mod tidy && go run async.go
 ```
