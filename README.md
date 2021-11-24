@@ -1,6 +1,6 @@
 # Concurrent-API-Calls-with-Go
 ### What are GoRoutines?
-A Goroutine is a lightweight thread managed by the Go runtime. It lives within the user thread space and is managed entirely by the run-time system. The kernel has no knowledge of user-level threads and manages them as if a single-thread process. The overhead for assignment, suspension, resumption is much lower than OS threads. In Java, threads map directly to OS threads. OS threads have large fixed stack size and there is a cap on the number of them to run in a single VM due to the increasing memory overhead.
+A Goroutine is a lightweight thread managed by the Go runtime. It lives within the user thread space, scheduled by the language, and is managed entirely by the run-time system. The kernel has no knowledge of user-level threads and manages them as if a single-thread process. The overhead for assignment, suspension, resumption is much lower than OS threads. In JVMs, threads map directly to OS threads. OS threads have large fixed stack size and there is a cap on the number of them to run in a single VM due to the increasing memory overhead. That is why you can run many millions more goroutines and only thousands of Java threads at a time.
 
 <br>
 
