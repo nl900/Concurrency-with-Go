@@ -10,7 +10,7 @@ In JVMs, threads map directly 1:1 to OS threads which limits massice concurrency
 In Go, stacks are dynamically sized. A new goroutine typically have an initial stack size of 4KB.
 That is why you can run many millions more goroutines and only thousands of Java threads at a time.
 <br>
-A second issue is JBM relies on the OS kernel to schedule OS threads. The OS keeps a list of all running processes and threads and attempts to give each a fair share of CPU time. When it switches from one thread to another, the new thread/process running must be started with a view of the world that abstract away other threads running on the same CPU.
+A second issue is JBM relies on the OS kernel to schedule OS threads. The OS keeps a list of all running processes and threads and attempts to give each a fair share of CPU time. When it switches from one thread to another, the new thread/process running must be started with a view of the world that abstract away other threads running on the same CPU. This takes time.
 <br>
 Go has its own scheduler that allows many Goroutines to run on the same OS thread. It saves a significant amount of time on context switching. The scheduler also optimises by only running a Goroutine that has a non-empty channel with work to do.
 
