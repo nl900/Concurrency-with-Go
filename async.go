@@ -28,7 +28,7 @@ func makeRequest(user string, ch chan<- string, wg *sync.WaitGroup) {
 func AsyncRequest(users []string) {
 	ch := make(chan string)
 	var user string
-	var wg sync.WaitGroup // track values expected from the channel
+	var wg sync.WaitGroup // Wait for all goroutines to complete after the input channel is exhausted
 	for _, user = range users {
 		wg.Add(1)                     // there is now 1 pending operation
 		go makeRequest(user, ch, &wg) // launch a go routine per url
