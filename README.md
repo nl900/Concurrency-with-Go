@@ -11,5 +11,5 @@ Goroutines exist only in the virtual space of a go runtime instead of in the OS 
 Run the program by downloading the repository and run the following commands
 ```shell
 
-go mod init async && go mod tidy && go run async.go
+go mod tidy && go run async.go
 ```
